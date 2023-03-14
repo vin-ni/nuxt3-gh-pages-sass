@@ -1,0 +1,44 @@
+/* ============ Interface ============ */
+
+// spacing
+$globalPadding: 10px;
+$spacingXS: 0.25rem;
+$spacingS: 0.5rem;
+$spacingM: 1rem;
+$spacingL: 2.5rem;
+$spacingXL: 6rem;
+
+// font sizes
+$smallFontSizeMobile: 0.8rem;
+$smallFontSize: 0.8rem;
+$baseFontSizeMobile: 15px;
+$baseFontSize: 15px;
+$mediumFontSizeMobile: 21px;
+$mediumFontSizeMobileProject: 17px;
+$mediumFontSize: 21px;
+$largeFontSizeMobile: 32px;
+$largeFontSize: 32px;
+$largerFontSizeMobile: 2.5rem;
+$largerFontSize: 3.5rem;
+
+// hard coded font sizes
+$dashSpace: 6px;
+
+// colors
+$black: #000;
+$white: #ffffff;
+$bodyBackground: white;
+$selection: #ADFF00;
+$grey-light: #E0E0E0;
+$grey-verylight: #f2f2f2;
+
+// paddings
+$paddingSidesDesktop: 10px;
+$buttonMargin: 10px;
+
+// menu
+$menuHeight: 32px;
+
+// transition
+$transitionDefault: 250ms ease;
+$transitionFast: 1750ms ease;
