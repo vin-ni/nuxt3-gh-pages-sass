@@ -6,26 +6,25 @@ const { data: news } = await useAsyncData('news', () => {
 
 <template>
   <div class="wrapper">
-    <h1>Title</h1>
+    <h1>Links</h1>
 
     <section>
       <div v-if="news">
         <div class="news-archive-container">
           <div v-for="article in news">
-            <a :href="article._path" class="container">
-              <div class="img-container">
-                <img :src="article.teaser_img.src" :alt="article.teaser_img.alt">
-              </div>
+            <NuxtLink :to="article._path" class="container">
               <h4>
                 {{ article.title }}
               </h4>
-            </a>
-
-
+            </NuxtLink>
           </div>
         </div>
       </div>
     </section>
+    <br>
+    <br>
+
+    <h1>Other Text</h1>
 
     <p>Loorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
       dolore
@@ -72,7 +71,7 @@ const { data: news } = await useAsyncData('news', () => {
     }
   }
 
-  p {
+  p, a {
     font-size: 24px;
 
     @include onScreen('phone-only') {

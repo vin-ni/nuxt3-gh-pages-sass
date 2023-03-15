@@ -11,15 +11,10 @@ const { data: news } = await useAsyncData('news', () => {
         <div class="news-archive-container">
           <div v-for="article in news">
             <NuxtLink :to="article._path" class="container">
-              <div class="img-container">
-                <img :src="article.teaser_img.src" :alt="article.teaser_img.alt">
-              </div>
               <h4>
                 {{ article.title }}
               </h4>
             </NuxtLink>
-
-
           </div>
         </div>
       </div>
