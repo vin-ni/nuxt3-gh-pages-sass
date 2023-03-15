@@ -1,7 +1,34 @@
+<script setup>
+const { data: news } = await useAsyncData('news', () => {
+  return queryContent('news').sort({ date: 1 }).find()
+})
+</script>
+
 <template>
   <div class="wrapper">
     <h1>Title</h1>
-    <p>Loorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+
+    <section>
+      <div v-if="news">
+        <div class="news-archive-container">
+          <div v-for="article in news">
+            <a :href="article._path" class="container">
+              <div class="img-container">
+                <img :src="article.teaser_img.src" :alt="article.teaser_img.alt">
+              </div>
+              <h4>
+                {{ article.title }}
+              </h4>
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p>Loorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+      dolore
       magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
       gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
       elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
@@ -47,6 +74,7 @@
 
   p {
     font-size: 24px;
+
     @include onScreen('phone-only') {
       font-size: 16px;
     }
@@ -57,6 +85,7 @@
   }
 
   background-color: yellow;
+
   @include onScreen('phone-only') {
     background-color: greenyellow;
   }
